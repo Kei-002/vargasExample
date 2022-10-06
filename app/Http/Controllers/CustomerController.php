@@ -50,4 +50,8 @@ class CustomerController extends Controller
         return response()->json(["success" => "customer deleted successfully.",
              "status" => 200]);
     }
+
+    public function show() {
+        
+    }
 }
