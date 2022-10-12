@@ -14,10 +14,10 @@ class CustomerController extends Controller
     }
     public function getCustomerAll(Request $request)
     {
-        // if ($request->ajax()) {
+        if ($request->ajax()) {
             $customers = Customer::orderBy('lname', 'DESC')->get();
             return response()->json($customers);
-        // }
+        }
     }
 
     public function store(Request $request)
@@ -37,6 +37,7 @@ class CustomerController extends Controller
     {
         // if ($request->ajax()) {
         $customer = Customer::find($id);
+        // dd($customer);
         $customer = $customer->update($request->all());
          return response()->json($customer);
         // }
