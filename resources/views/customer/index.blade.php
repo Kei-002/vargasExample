@@ -209,7 +209,7 @@
 
 
     {{-- item container --}}
-    <div class="container">
+    {{-- <div class="container">
         <div id="items" class="container">
             <button type="button" class="btn btn-info btn-lg" data-bs-toggle="modal"
                 data-bs-target="#itemModal">add<span class="glyphicon glyphicon-plus"
@@ -235,9 +235,7 @@
             </div>
         </div>
     </div>
-    {{-- Item container end --}}
-
-    {{-- Item Create Modal --}}
+    
     <div class="modal fade" id="itemModal" role="dialog" style="display:none">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -271,7 +269,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- Item Create Modal end --}}
    
 

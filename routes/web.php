@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::resource('customer', 'CustomerController');
 
 Route::resource('item', 'ItemController');
+Route::get('/get-item', 'ItemController@getItem');

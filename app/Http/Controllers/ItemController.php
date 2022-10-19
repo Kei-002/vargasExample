@@ -14,10 +14,15 @@ class ItemController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
+        // if ($request->ajax()) {
             $items = Item::orderBy('item_id', 'DESC')->get();
+            // return response()->json(array('data'=>$items));
             return response()->json($items);
-        }
+        // }
+    }
+
+    public function getItem() {
+        return View('item.index');
     }
 
     /**

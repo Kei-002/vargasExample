@@ -1,4 +1,56 @@
 $(document).ready(function () {
+    $("#itable").DataTable({
+        ajax: {
+            url: "/api/item",
+            dataSrc: "",
+        },
+        dom: "Bfrtip",
+        buttons: [
+            "pdf",
+            "excel",
+            {
+                text: "Add Item",
+                className: "btn btn-primary",
+                action: function (e, dt, node, config) {
+                    $("#iform").trigger("reset");
+                    $("#itemModal").modal("show");
+                },
+            },
+        ],
+        columns: [{
+                data: "item_id",
+            },
+            // {
+            //     data: 'null',
+            //     render : function{data, type, row}   
+            // },
+            {
+                data: "description",
+            },
+
+            {
+                data: "sell_price",
+            },
+            {
+                data: "cost_price",
+            },
+            {
+                data: "title",
+            },
+            // {
+            //     data: "imagePath",
+            // },
+            {
+                data: null,
+                render: function (data, type, row) {
+                    return "<a href='#' data-bs-toggle='modal' data-bs-target='#editModal' id='editbtn' data-id=" +
+                        data.item_id +
+                        "><i class='fa-solid fa-pen' aria-hidden='true' style='font-size:24px' ></i></a><a href='#' class='deletebtn' data-id=" + data.item_id + "><i class='fa-regular fa-trash-can' style='font-size:24px; color:red'></a></i>";
+                },
+            },
+        ],
+    });
+
     $("#items").hide();
 
     $("#item").on("click", function (e) {
@@ -10,7 +62,6 @@ $(document).ready(function () {
             e.preventDefault();
             $("#customers").show();
             $("#items").hide("slow");
-            
         });
         $.ajax({
             type: "GET",
@@ -61,7 +112,7 @@ $(document).ready(function () {
             console.log(data);
             $.ajax({
                 type: "post",
-                url: "/api/customer",
+                url: "/api/item",
                 data: data,
                 headers: {
                     "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
@@ -76,14 +127,13 @@ $(document).ready(function () {
                     //         $(this).modal('hide'); });
                     $.each(data, function (key, value) {
                         var tr = $("<tr>");
-                        tr.append($("<td>").html(data.customer_id));
-                        tr.append($("<td>").html(data.title));
-                        tr.append($("<td>").html(data.lname));
-                        tr.append($("<td>").html(data.fname));
-                        tr.append($("<td>").html(data.addressline));
-                        tr.append($("<td>").html(data.phone));
-                        tr.append($("<td>").html(data.creditlimit));
-                        tr.append($("<td>").html(data.level));
+                        // tr.append($("<td>").html(data.customer_id));
+                        tr.append($("<td>").html(data.description));
+                        tr.append($("<td>").html(data.sell_price));
+                        tr.append($("<td>").html(data.cost_price));
+                        tr.append($("<td>").html(data.uploads));
+                        // tr.append($("<td>").html(data.creditlimit));
+                        // tr.append($("<td>").html(data.level));
                         $("#ctable").prepend(tr);
                     });
                 },
@@ -100,7 +150,7 @@ $(document).ready(function () {
             console.log(id);
             e.preventDefault();
             bootbox.confirm({
-                message: "Do you want to delete this customer",
+                message: "Do you want to delete this item",
                 buttons: {
                     confirm: {
                         label: "yes",
