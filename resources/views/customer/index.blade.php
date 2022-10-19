@@ -147,52 +147,52 @@
 
                         <div class="form-group">
                             <label for="title" class="control-label">Title</label>
-                            <input type="text" class="form-control" id="etitle" name="etitle">
+                            <input type="text" class="form-control" id="etitle" name="title">
 
                         </div>
 
                         <div class="form-group">
                             <label for="lname" class="control-label">USER_ID</label>
-                            <input type="text" class="form-control " id="euser_id" name="euser_id">
+                            <input type="text" class="form-control " id="euser_id" name="user_id">
 
                         </div>
 
                         <div class="form-group">
                             <label for="lname" class="control-label">last name</label>
-                            <input type="text" class="form-control " id="elname" name="elname">
+                            <input type="text" class="form-control " id="elname" name="lname">
 
                         </div>
                         <div class="form-group">
                             <label for="fname" class="control-label">First Name</label>
-                            <input type="text" class="form-control " id="efname" name="efname">
+                            <input type="text" class="form-control " id="efname" name="fname">
 
                         </div>
                         <div class="form-group">
                             <label for="address" class="control-label">Address</label>
-                            <input type="text" class="form-control" id="eaddress" name="eaddressline">
+                            <input type="text" class="form-control" id="eaddress" name="addressline">
 
                         </div>
                         <div class="form-group">
                             <label for="town" class="control-label">Town</label>
-                            <input type="text" class="form-control" id="etown" name="etown">
+                            <input type="text" class="form-control" id="etown" name="town">
                         </div>
                         <div class="form-group">
                             <label for="zipcode" class="control-label">Zip code</label>
-                            <input type="text" class="form-control" id="ezipcode" name="ezipcode">
+                            <input type="text" class="form-control" id="ezipcode" name="zipcode">
                         </div>
                         <div class="form-group">
                             <label for="phone" class="control-label">Phone</label>
-                            <input type="text" class="form-control" id="ephone" name="ephone">
+                            <input type="text" class="form-control" id="ephone" name="phone">
                         </div>
 
                         <div class="form-group">
                             <label for="phone" class="control-label">Credit Limit</label>
-                            <input type="text" class="form-control" id="ecreditlimit" name="ecreditlimit">
+                            <input type="text" class="form-control" id="ecreditlimit" name="creditlimit">
                         </div>
 
                         <div class="form-group">
                             <label for="phone" class="control-label">Level</label>
-                            <input type="text" class="form-control" id="elevel" name="elevel">
+                            <input type="text" class="form-control" id="elevel" name="level">
                         </div>
 
                     </form>
